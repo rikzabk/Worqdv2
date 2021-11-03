@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOME"
+        android:textSize="40sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:backgroundTint="@color/white"
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/homeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_logo_worqd" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/tv_interest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile App Development"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingVertical="5dp"
+            app:layout_constraintTop_toBottomOf="@id/appBar"/>
+
+        <TextView
+            android:id="@+id/tv_recent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recently Viewed"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingVertical="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_recycler_card" />
+
+        <TextView
+            android:id="@+id/tv_popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular Services"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingVertical="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_recycler_card2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recycler_card"
+            android:layout_width="match_parent"
+            android:layout_height="202dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@+id/tv_interest"
+            tools:itemCount="5"
+            tools:listitem="@layout/recycler_card" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recycler_card2"
+            android:layout_width="match_parent"
+            android:layout_height="202dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recent"
+            tools:itemCount="5"
+            tools:listitem="@layout/recycler_card" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recycler_card3"
+            android:layout_width="match_parent"
+            android:layout_height="202dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@+id/tv_popular"
+            tools:itemCount="5"
+            tools:listitem="@layout/recycler_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
